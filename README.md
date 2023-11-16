@@ -1,10 +1,10 @@
 # VLM-HOI
 
-<img src="figures/intro.jpg" width="500" height="auto">
-<img src="figures/overview.jpg" width="1200" height="auto">
-
 ## Introduction
 This repository contains the code for the paper VLM-HOI: Contrastive Knowledge Distillation from the Large Vision Language Model for Human-Object Interaction Detection. The code is based on [MUREN]() and [CDN]().
+
+<img src="figures/intro.jpg" width="500" height="auto">
+<img src="figures/overview.jpg" width="1200" height="auto">
 
 ## Installation
 1. Clone this repository.
