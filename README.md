@@ -1,6 +1,6 @@
 # VLM-HOI
 
-<img src="figures/intro.jpg" width="600" height="auto">
+<img src="figures/intro.jpg" width="400" height="auto">
 <img src="figures/overview.jpg" width="1200" height="auto">
 
 ## Introduction
