@@ -232,7 +232,7 @@ def main(args):
 
     if not args.debug:
         if utils.is_main_process():
-            wandb.init(project='MUREN',name=args.output_dir)
+            wandb.init(project='VLM-HOI',name=args.output_dir)
     else:
         print('total',sum(p.numel() for p in model.parameters()))
         print('trainable',sum(p.numel() for p in model.parameters() if p.requires_grad))
