@@ -30,18 +30,6 @@ VLM-HOI
 ```
 
 ## Training
-### HICO-DET
-To train the model, run the following command:
-```
-torchrun --nproc_per_node=4 main.py \
-        --pretrained pretrained/detr-r50-pre-2stage-nq64.pth \
-        --output_dir PATH/TO/SAVE \
-        --dataset_file hico --hoi_path data/hico_20160224_det \
-        --num_obj_classes 80 --num_verb_classes 117 \
-        --backbone resnet50 --num_queries 64 \
-        --enc_layers 6 --dec_layers 6 \
-        --epochs 100 --lr_drop 60 --num_worker 8 --batch_size 4
-```
 
 ### V-COCO
 To train the model, run the following command:
@@ -55,17 +43,23 @@ torchrun --nproc_per_node=4 main.py \
         --enc_layers 6 --dec_layers 6 \
         --epochs 100 --lr_drop 60 --num_worker 8 --batch_size 4 --freeze
 ```
+It takes about 2 days to train the model on 4 3090 GPUs.
+
+### HICO-DET
+To train the model, run the following command:
+```
+torchrun --nproc_per_node=4 main.py \
+        --pretrained pretrained/detr-r50-pre-2stage-nq64.pth \
+        --output_dir PATH/TO/SAVE \
+        --dataset_file hico --hoi_path data/hico_20160224_det \
+        --num_obj_classes 80 --num_verb_classes 117 \
+        --backbone resnet50 --num_queries 64 \
+        --enc_layers 6 --dec_layers 6 \
+        --epochs 100 --lr_drop 60 --num_worker 8 --batch_size 4
+```
+It takes about 5 days to train the model on 4 3090 GPUs.
 
 ## Evaluation
-### HICO-DET
-To evaluate the model, run the following command:
-```
-python main.py --pretrained "pretrained/hico-best.pth" \
-  --dataset_file hico --hoi_path data/hico_20160224_det \
-  --num_obj_classes 80 --num_verb_classes 117 --backbone resnet50 \
-  --num_queries 64 --dec_layers 6 --num_workers 8 --batch_size 4 --use_nms_filter \
-  --eval
-```
 
 ### V-COCO
 
@@ -79,5 +73,15 @@ python generate_vcoco_official.py \
 
 cd data/v-coco
 python vsrl_eval.py "vcoco.pickle"
+```
+
+### HICO-DET
+To evaluate the model, run the following command:
+```
+python main.py --pretrained "pretrained/hico-best.pth" \
+  --dataset_file hico --hoi_path data/hico_20160224_det \
+  --num_obj_classes 80 --num_verb_classes 117 --backbone resnet50 \
+  --num_queries 64 --dec_layers 6 --num_workers 8 --batch_size 4 --use_nms_filter \
+  --eval
 ```
 
