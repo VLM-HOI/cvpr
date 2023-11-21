@@ -18,8 +18,8 @@ conda activate vlm_hoi
 pip install -r requirements.txt
 ```
 ## Data preparation
-3. Download the [data](htt)
-4. Download the [pretrained model](htt)
+3. Download the [data](https://drive.google.com/drive/folders/1cOge9zF-E1j0ZrEPWyMRxdTvTghyhP9F)
+4. Download the [pretrained model](https://drive.google.com/drive/folders/1-JmwpwDWtHyyPhC0BCLRhJ9eIj5FLdYf?usp=sharing)
 5. Extract the data and pretrained model to:
 ```
 VLM-HOI
